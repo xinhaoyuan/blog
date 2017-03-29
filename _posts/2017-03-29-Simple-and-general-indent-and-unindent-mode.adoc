@@ -1,0 +1,15 @@
+= Simple and general indent and unindent mode
+
+Emacs has sophisticated indentation systems. Sometimes I feel good with them,  sometimes no. I was wondering if there is any general indentation fallback exists when advanced one fails or doesn't meet my taste. It should be simple enough to understand and control, while still make sense to produce "acceptable" indentation results.
+
+I didn't find such one. So I created my own minor mode plus a indent-line-function that can be used by general indent-for-tab-command.
+
+It's currently a single-file minor mode in my configuration. I will publish it when I feel it's mature enough.
+
+The <tab> logic is like this: it simply insert a tab if it not in the leading space region of a line. This make sense because in this situation it usually means I do want to insert a tab. Or it move the cursor to the end of indentation in this line, if not so already. Then it tries to make the line as indented as previous indented line, or insert a space with width of "simple-indent-get-width", which trys to get the width in many different ways.
+
+If <tab> is presses with region actived. The minor mode tries to increase indent for every line covered by the region.
+
+<backtab> logic is similar - but tries to decrease indentation by "simple-indent-get-width", for a single line or a region.
+
+I feel comforatble using this minor mode when the default indentation schema 
