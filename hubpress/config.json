@@ -5,6 +5,22 @@
     "branch": "gh-pages"
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "https://xinhaoyuan.github.io/blog",
+    "hubpress": "https://xinhaoyuan.github.io/blog",
+    "theme": "//xinhaoyuan.github.io/blog/themes/casper",
+    "images": "https://xinhaoyuan.github.io/blog/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
   }
 }
