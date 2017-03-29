@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Untitled RSS Feed]]></title><description><![CDATA[Untitled RSS Feed]]></description><link>https://xinhaoyuan.github.io/blog</link><generator>RSS for Node</generator><lastBuildDate>Wed, 29 Mar 2017 22:18:31 GMT</lastBuildDate><atom:link href="https://xinhaoyuan.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Simple and general indent and unindent mode]]></title><description><![CDATA[<div class="paragraph">
+<p>Emacs has sophisticated indentation systems. Sometimes I feel good with them,  sometimes no. I was wondering if there is any general indentation fallback exists when advanced one fails or doesn&#8217;t meet my taste. It should be simple enough to understand and control, while still make sense to produce "acceptable" indentation results.</p>
+</div>
+<div class="paragraph">
+<p>I didn&#8217;t find such one. So I created my own minor mode plus a indent-line-function that can be used by general indent-for-tab-command.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s currently a single-file minor mode (emacsconf/.config/emacs/simple-indent-mode.el) in my configuration. I will publish it when I feel it&#8217;s mature enough.</p>
+</div>
+<div class="paragraph">
+<p>The &lt;tab&gt; logic is like this: it simply insert a tab if it not in the leading space region of a line. This make sense because in this situation it usually means I do want to insert a tab. Or it move the cursor to the end of indentation in this line, if not so already. Then it tries to make the line as indented as previous indented line, or insert a space with width of "simple-indent-get-width", which trys to get the width in many different ways.</p>
+</div>
+<div class="paragraph">
+<p>If &lt;tab&gt; is presses with region actived. The minor mode tries to increase indent for every line covered by the region.</p>
+</div>
+<div class="paragraph">
+<p>&lt;backtab&gt; logic is similar - but tries to decrease indentation by "simple-indent-get-width", for a single line or a region.</p>
+</div>
+<div class="paragraph">
+<p>I feel comforatble using this minor mode when the default indentation schema doesn&#8217;t do a good job.</p>
+</div>]]></description><link>https://xinhaoyuan.github.io/blog/2017/03/29/Simple-and-general-indent-and-unindent-mode.html</link><guid isPermaLink="true">https://xinhaoyuan.github.io/blog/2017/03/29/Simple-and-general-indent-and-unindent-mode.html</guid><dc:creator><![CDATA[Xinhao.Yuan]]></dc:creator><pubDate>Wed, 29 Mar 2017 00:00:00 GMT</pubDate></item></channel></rss>
